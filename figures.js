@@ -2,57 +2,73 @@
 
 // Comment
 // * CODE OF APPLICATION
-//? function
-function perimeterSquare(side) {
-  return side * 4;
-}
-
-function areaSquare(side) {
-  return side * side;
-}
+//? general functions
+roundValue = (value) => value.toFixed(2);
 
 //? square code
 console.group('SQUARE');
-const sideSquare = 5;
-// const perimeterSquare = perimeterSquare(sideSquare);
-// const areaSquare = areaSquare(sideSquare);
-console.log(`Square side metric ${sideSquare} cm`);
-console.log(
-  `Perimeter Square:  ${perimeterSquare} cm Area Square: ${areaSquare} cm²`
-);
+perimeterSquare = (side) => side * 4;
+areaSquare = (side) => Math.pow(side, 2);
+calcPerimeterSquare = () => {
+  const inputSquare = document.getElementById('InputSquare');
+  PerimeterSquare.innerHTML = roundValue(perimeterSquare(inputSquare.value));
+};
+calcAreaSquare = () => {
+  const inputSquare = document.getElementById('InputSquare');
+  AreaSquare.innerHTML = roundValue(areaSquare(inputSquare.value));
+};
 console.groupEnd();
 
 //? triangle code
 console.group('TRIANGLE');
-const sideTriangleA = 6;
-const sideTriangleB = 6;
-const baseTriangle = 4;
-const heightTriangle = Math.floor(
-  Math.sqrt(Math.pow(sideTriangleA, 2) + Math.pow(baseTriangle / 2, 2))
-);
-const perimeterTriangle = sideTriangleA + sideTriangleB + baseTriangle;
-const areaTriangle = (baseTriangle * heightTriangle) / 2;
-console.log(
-  `Triangle side ${sideTriangleA}cm ${sideTriangleB}cm ${baseTriangle}cm`
-);
-console.log(`Triangle height ${heightTriangle}cm`);
-console.log(`Triangle perimeter ${perimeterTriangle}cm`);
-console.log(`Triangle area ${areaTriangle}cm²`);
-
+perimeterTriangle = (sideA, sideB, baseTriangle) =>
+  sideA + sideB + baseTriangle;
+areaTriangle = (baseTriangle, sideA, sideB) => {
+  const heightTriangle = calcHeightTriangle(sideA, sideB, baseTriangle);
+  return (baseTriangle * heightTriangle) / 2;
+};
+calcHeightTriangle = (aSide, bSide, base) => {
+  if (aSide !== bSide) {
+    alert(`Triangle is not ISOSCELES`);
+  } else {
+    return Math.sqrt(Math.pow(aSide, 2) + Math.pow(base / 2, 2));
+  }
+};
+getValuesTriangle = () => {
+  return {
+    A: parseFloat(document.getElementById('InputTriangleA').value),
+    B: parseFloat(document.getElementById('InputTriangleB').value),
+    base: parseFloat(document.getElementById('InputTriangleBase').value),
+  };
+};
+calcPerimeterTriangle = () => {
+  let values = getValuesTriangle();
+  PerimeterTriangle.innerHTML = roundValue(
+    perimeterTriangle(values['A'], values['B'], values['base'])
+  );
+};
+calcAreaTriangle = () => {
+  let values = getValuesTriangle();
+  AreaTriangle.innerHTML = roundValue(
+    areaTriangle(values['base'], values['A'], values['B'])
+  );
+};
 console.groupEnd();
 
 //? circle code
 console.group('CIRCLE');
-const radiusCircle = 6;
-const diameterCirle = radiusCircle * 2;
 const piCircle = Math.PI;
-console.log(
-  `Circle radius ${radiusCircle}cm Circle diameter ${diameterCirle}cm`
-);
-console.log(`PI ${piCircle}`);
-const perimeterCircle = piCircle * diameterCirle;
-const areaCircle = Math.pow(radiusCircle, 2) * piCircle;
-console.log(
-  `Perimeter circle ${perimeterCircle} Area circle ${areaCircle}cm² `
-);
+diameterCirle = (radiusCircle) => radiusCircle * 2;
+perimeterCircle = (radiusCircle) => diameterCirle(radiusCircle) * piCircle;
+areaCircle = (radiusCircle) => Math.pow(radiusCircle, 2) * piCircle;
+calcPerimeterCircle = () => {
+  let radius = document.getElementById('InputCircle');
+  PerimeterCircle.innerHTML = roundValue(perimeterCircle(radius.value));
+};
+
+calcAreaCircle = () => {
+  let radius = document.getElementById('InputCircle');
+  AreaCircle.innerHTML = roundValue(areaCircle(radius.value));
+};
+
 console.groupEnd();
