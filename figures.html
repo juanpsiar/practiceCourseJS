@@ -16,12 +16,15 @@
         First WorkShop of the Practice Course of JavaScript
       </h3>
     </header>
-    <div class="flex flex-wrap justify-between">
+    <div class="flex flex-wrap justify-center">
       <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
-        <h2 class="text-center font-bold text-lg">Square</h2>
+        <div class="flex justify-center items-center">
+          <img class="w-8 mr-2" src="./resources/images/square.svg" />
+          <h2 class="text-center font-bold text-lg">Square</h2>
+        </div>
         <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
           <div class="m-1 flex">
-            <label class="w-1/3 text-center">Side: </label>
+            <label class="w-1/3 text-center"> Side: </label>
             <input
               class="
                 bg-red-500font-sans
@@ -52,17 +55,68 @@
             Area
           </button>
           <div class="flex justify-center">
-            <label class="text-center text-red-500 ml-2" id="PerimeterSquare"
+            <label class="text-center text-green-500 ml-2" id="PerimeterSquare"
               >Perimeter</label
             >
-            <label class="text-center text-red-500 ml-2" id="AreaSquare"
+            <label class="text-center text-green-500 ml-2" id="AreaSquare"
               >Area</label
             >
           </div>
         </form>
       </section>
-      <section class="m-2 p-2 border-2 border-gray-300 shadow-xl w-1/2">
-        <h2 class="text-center font-bold text-lg">Triangle</h2>
+      <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
+        <div class="flex justify-center items-center">
+          <img class="w-8 mr-2" src="./resources/images/oval.svg" />
+          <h2 class="text-center font-bold text-lg">Circle</h2>
+        </div>
+
+        <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
+          <div class="m-1 flex">
+            <label class="w-1/3 text-center">Radius: </label>
+            <input
+              class="
+                bg-red-500font-sans
+                border
+                px-1
+                w-2/3
+                hover:border-blue-600
+                text-center text-red-300
+                border-gray-400
+              "
+              id="InputCircle"
+              type="number"
+              min="0"
+            />
+          </div>
+          <button
+            class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+            type="button"
+            onclick="calcPerimeterCircle()"
+          >
+            Perimeter
+          </button>
+          <button
+            class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+            type="button"
+            onclick="calcAreaCircle()"
+          >
+            Area
+          </button>
+          <div class="flex m-1 justify-center">
+            <label class="text-center text-green-500 ml-2" id="PerimeterCircle"
+              >Perimeter</label
+            >
+            <label class="text-center text-green-500 ml-2" id="AreaCircle"
+              >Area</label
+            >
+          </div>
+        </form>
+      </section>
+      <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
+        <div class="flex justify-center items-center">
+          <img class="w-8 mr-2" src="./resources/images/triangle.svg" />
+          <h2 class="text-center font-bold text-lg">Triangle</h2>
+        </div>
         <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
           <div class="m-1 flex">
             <label class="w-1/3 text-center">Side A: </label>
@@ -130,65 +184,12 @@
             Area
           </button>
           <div class="flex m-1 justify-center">
-            <label class="text-center text-red-500 ml-2" id="PerimeterTriangle"
-              >Perimeter</label
-            >
-            <label class="text-center text-red-500 ml-2" id="AreaTriangle"
-              >Area</label
-            >
-          </div>
-        </form>
-      </section>
-      <section class="m-2">
-        <h2 class="text-center text-lg">Circle</h2>
-        <form
-          class="
-            m-2
-            p-1
-            border border-gray-300
-            rounded-xl
-            flex-row
-            items-center
-          "
-        >
-          <div class="mb-1">
-            <label>Radius: </label>
-            <input
-              class="
-                bg-red-500font-sans
-                border
-                px-1
-                w-32
-                hover:border-blue-600
-                text-center text-red-300
-                border-gray-400
-              "
-              id="InputCircle"
-              type="number"
-              min="0"
-            />
-          </div>
-          <div class="flex items-center">
-            <button
-              class="p-1 border-gray-300 bg-green-100 border rounded-xl"
-              type="button"
-              onclick="calcPerimeterCircle()"
-            >
-              Perimeter
-            </button>
             <label
-              class="text-center text-red-500 ml-2 w-1/5"
-              id="PerimeterCircle"
+              class="text-center text-green-500 ml-2"
+              id="PerimeterTriangle"
               >Perimeter</label
             >
-            <button
-              class="p-1 border-gray-300 bg-green-100 border rounded-xl"
-              type="button"
-              onclick="calcAreaCircle()"
-            >
-              Area
-            </button>
-            <label class="text-center text-red-500 ml-2 w-1/5" id="AreaCircle"
+            <label class="text-center text-green-500 ml-2" id="AreaTriangle"
               >Area</label
             >
           </div>
