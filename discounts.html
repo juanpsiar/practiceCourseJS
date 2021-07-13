@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <title>Percentages & Discounts | Practice Course JavaScript</title>
+  </head>
+  <body class="flex flex-col items-center">
+    <header class="m-2">
+      <h1 class="text-red-500 text-center text-3xl">Percentages & Discounts</h1>
+      <h3 class="text-red-300 text-center">
+        Second WorkShop of the Practice Course of JavaScript
+      </h3>
+    </header>
+    <section
+      class="
+        m-2
+        p-2
+        border-2 border-gray-300
+        shadow-xl
+        sm:w-1/2
+        md:w-1/2
+        lg:w-1/3
+      "
+    >
+      <h2 class="m-1">Calculate the price of your products with discount</h2>
+      <form
+        class="
+          m-2
+          p-1
+          border border-gray-300
+          rounded-xl
+          flex flex-col
+          justify-center
+        "
+      >
+        <div class="m-1 flex justify-center">
+          <label class="w-1/4" for="InputPrice">Product Price: </label>
+          <input
+            class="
+              bg-red-500font-sans
+              border
+              px-1
+              w-2/3
+              hover:border-blue-600
+              text-center text-red-300
+              border-gray-400
+            "
+            id="InputPrice"
+            type="number"
+            min="0"
+            placeholder="Introduce Price Product"
+          />
+        </div>
+        <div class="m-1 flex justify-center">
+          <label class="w-1/4" for="InputDiscount">Product Discount: </label>
+          <input
+            class="
+              bg-red-500font-sans
+              border
+              px-1
+              w-2/3
+              hover:border-blue-600
+              text-center text-red-300
+              border-gray-400
+            "
+            id="InputDiscount"
+            type="number"
+            min="0"
+            placeholder="Introduce Discount Product"
+          />
+        </div>
+        <div class="m-1 flex justify-center items-center">
+          <input
+            class="mr-2"
+            type="radio"
+            id="CouponFlag"
+            onclick="showCoupons()"
+          />Do you have coupons
+        </div>
+        <label class="text-red-300 text-center" id="CouponDiscount"></label>
+        <div class="m-1 flex justify-center" id="BlockCoupons">
+          <label class="w-1/4" for="InputCoupon">Coupon: </label>
+          <input
+            class="
+              bg-red-500font-sans
+              border
+              px-1
+              w-2/3
+              hover:border-blue-600
+              text-center text-red-300
+              border-gray-400
+            "
+            id="InputCoupon"
+            type="text"
+            min="0"
+            placeholder="Introduce your coupon"
+          />
+        </div>
+
+        <button
+          class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+          onclick="onHandleDiscount()"
+          type="button"
+        >
+          Price with Discount
+        </button>
+        <label class="text-center text-green-500 ml-2" id="FinalPrice"
+          >Final Price
+        </label>
+      </form>
+    </section>
+    <script src="discounts.js"></script>
+  </body>
+</html>
