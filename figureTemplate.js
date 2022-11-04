@@ -1,0 +1,126 @@
+const figureTemplate = () => {
+  return `
+  <header class="m-2">
+  <a class="m-4 underline text-blue-500" href="./index.html">Index</a>
+  <h1 class="text-red-500 text-center text-3xl">Geometric Figures</h1>
+  <h3 class="text-red-300 text-center">First WorkShop of the Practice Course of JavaScript</h3>
+  </header>
+  <div class="flex flex-wrap justify-center">
+  <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
+    <div class="flex justify-center items-center">
+      <img class="w-8 mr-2" src="./resources/images/square.svg" />
+      <h2 class="text-center font-bold text-lg">Square</h2>
+    </div>
+    <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
+      <div class="m-1 flex">
+        <label class="w-1/3 text-center"> Side: </label>
+        <input
+          class="bg-red-500font-sans border px-1 w-2/3 hover:border-blue-600 text-center text-red-300 border-gray-400"
+          id="InputSquare"
+          type="number"
+          min="0" />
+      </div>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcPerimeterSquare()">
+        Perimeter
+      </button>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcAreaSquare()">
+        Area
+      </button>
+      <div class="flex justify-center">
+        <label class="text-center text-green-500 ml-2" id="PerimeterSquare">Perimeter</label>
+        <label class="text-center text-green-500 ml-2" id="AreaSquare">Area</label>
+      </div>
+    </form>
+  </section>
+  <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
+    <div class="flex justify-center items-center">
+      <img class="w-8 mr-2" src="./resources/images/oval.svg" />
+      <h2 class="text-center font-bold text-lg">Circle</h2>
+    </div>
+  
+    <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
+      <div class="m-1 flex">
+        <label class="w-1/3 text-center">Radius: </label>
+        <input
+          class="bg-red-500font-sans border px-1 w-2/3 hover:border-blue-600 text-center text-red-300 border-gray-400"
+          id="InputCircle"
+          type="number"
+          min="0" />
+      </div>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcPerimeterCircle()">
+        Perimeter
+      </button>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcAreaCircle()">
+        Area
+      </button>
+      <div class="flex m-1 justify-center">
+        <label class="text-center text-green-500 ml-2" id="PerimeterCircle">Perimeter</label>
+        <label class="text-center text-green-500 ml-2" id="AreaCircle">Area</label>
+      </div>
+    </form>
+  </section>
+  <section class="m-2 p-2 border-2 border-gray-300 shadow-xl">
+    <div class="flex justify-center items-center">
+      <img class="w-8 mr-2" src="./resources/images/triangle.svg" />
+      <h2 class="text-center font-bold text-lg">Triangle</h2>
+    </div>
+    <form class="m-2 p-1 border border-gray-300 rounded-xl flex flex-col">
+      <div class="m-1 flex">
+        <label class="w-1/3 text-center">Side A: </label>
+        <input
+          class="bg-red-500font-sans border px-1 w-2/3 hover:border-blue-600 text-center text-red-300 border-gray-400"
+          id="InputTriangleA"
+          type="number"
+          min="0" />
+      </div>
+      <div class="m-1 flex">
+        <label class="w-1/3 text-center">Side B: </label>
+        <input
+          class="bg-red-500font-sans border px-1 w-2/3 hover:border-blue-600 text-center text-red-300 border-gray-400"
+          id="InputTriangleB"
+          type="number"
+          min="0" />
+      </div>
+      <div class="m-1 flex">
+        <label class="w-1/3 text-center">Base: </label>
+        <input
+          class="bg-red-500font-sans border px-1 w-2/3 hover:border-blue-600 text-center text-red-300 border-gray-400"
+          id="InputTriangleBase"
+          type="number"
+          min="0" />
+      </div>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcPerimeterTriangle()">
+        Perimeter
+      </button>
+      <button
+        class="p-1 m-1 border-gray-300 bg-green-100 border rounded-xl"
+        type="button"
+        onclick="calcAreaTriangle()">
+        Area
+      </button>
+      <div class="flex m-1 justify-center">
+        <label class="text-center text-green-500 ml-2" id="PerimeterTriangle">Perimeter</label>
+        <label class="text-center text-green-500 ml-2" id="AreaTriangle">Area</label>
+      </div>
+    </form>
+  </section>
+  </div>
+  
+  <script src="figures.js"></script>
+  `
+}

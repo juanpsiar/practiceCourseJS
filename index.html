@@ -8,16 +8,41 @@
 
     <title>Practice Course JavaScript</title>
   </head>
-  <body class="flex flex-col">
-    <h1 class="text-red-500 text-center text-3xl">Practice Course</h1>
-    <a class="m-1 underline text-blue-500" href="./figures.html"
-      >Geometric Figures
-    </a>
-    <a class="m-1 underline text-blue-500" href="./discounts.html"
-      >Percentages & Discounts</a
-    >
-    <a class="m-1 underline text-blue-500" href="./calculation.html"
-      >Average, Median & Mode</a
-    >
+  <body class="mt-16 flex flex-col h-screen align-center">
+    <h1 class="mt-32 text-red-500 text-center text-3xl">Practice Course</h1>
+    <div class="mt-16 flex flex-col items-center">
+      <div
+        class="m-5 w-1/5 grid content-center rounded-full border-solid border-2 border-indigo-500 bg-sky-500">
+        <a class="m-4 underline text-blue-500 text-center" href="./figures.html"
+          >Geometric Figures
+        </a>
+        <button class="m-4 underline text-blue-500 text-center" onclick="showGeometric()">
+          Geometric Figures
+        </button>
+      </div>
+      <div
+        class="m-5 w-1/5 grid content-center rounded-full border-solid border-2 border-indigo-500 bg-sky-500">
+        <a class="m-4 underline text-blue-500 text-center" href="./discounts.html"
+          >Percentages & Discounts</a
+        >
+        <button class="m-4 underline text-blue-500 text-center" onclick="showGeometric()">
+          Percentages & Discounts
+        </button>
+      </div>
+      <div
+        class="m-5 w-1/5 grid content-center rounded-full border-solid border-2 border-indigo-500 bg-sky-500">
+        <a class="m-4 underline text-blue-500 text-center" href="./calculation.html"
+          >Average, Median & Mode</a
+        >
+        <button class="m-4 underline text-blue-500 text-center" onclick="showGeometric()">
+          Average, Median & Mode
+        </button>
+      </div>
+    </div>
+    <div
+      class="
+  "
+      id="figure"></div>
+    <script src="index.js"></script>
   </body>
 </html>
